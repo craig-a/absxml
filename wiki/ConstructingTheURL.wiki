@@ -1,0 +1,3 @@
+#summary How to construct the URL to call the service
+
+http://absxml.appspot.com/absxml?pubFileName=640101&sheet=1 where pubFileName is the file name of the spreadsheet (minus extension) and sheet is the number of the sheet you want from the spreadsheet.
