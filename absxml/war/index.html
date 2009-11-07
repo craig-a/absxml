@@ -14,29 +14,27 @@
 
   <body>
   	<div id="header">
-    	<h1>absxml</h1>
+	  	<div id="title">
+	    	<h1>absxml</h1>
+	    </div>
+	    <div id="nav">
+	    	<ul>
+	    		<li><a href="http://code.google.com/p/absxml/">Project Page</a></li>
+	    		<li><a href="http://www.benrhughes.com">Author</a></li>
+	    	</ul>
+	    </div>
     </div>
     <div id="content">
 		<p>absxml is a simple service that provides time series data from the Australian
-		Bureau of Statistics in XML format. The ABS publishes the vast majority of its data
-		under a Creative Commons licence, however for legacy reasons it uses Excel as the delivery mechanism.
-		This makes it difficult to use programatically. 
-		</p>
-		<p>
-		absxml eases access to ABS data by doing a fairly straight conversion of a time series Excel
-		spreadsheet into XML. It also ensures that the latest version of the publication is used (caching aside). 
-		You can use the service by constructing a URL like:
-		<br/>
-		&nbsp;&nbsp;&nbsp;<a href="http://absxml.appspot.com/absxml?pubFileName=640101&sheet=1">http://absxml.appspot.com/absxml?pubFileName=640101&sheet=1</a>
-		<br/>
-		where pubFileName is the file name of the spreadsheet (minus extension) and sheet is the number of the sheet you 
-		want from the spreadsheet. 
-		<br/>
-		You can use the form below to test the service:
+		Bureau of Statistics in XML format. For more info, see the <a href="http://code.google.com/p/absxml">
+		project page.</a>
 		</p>
 	</div>
 	<div id="form">
-			<form name="input" action="absxml" method="get">
+		<p>
+			You can use this form to test the service:
+		</p>
+		<form name="input" action="absxml" method="get">
 			Enter the publication file name: <input type="text" name="pubFileName"/>
 			<br/>
 			Enter the sheet from the data cube: <input type="text" name="sheet"/>
@@ -45,7 +43,11 @@
 		</form>
 	</div>
 	<div id="disclaimer">
-		<p>This is currently very much in early beta - it's probably very broken.</p>
-		<p><b>NB</b> this site is in no way associated with or approved by the ABS.</p></div>
+		<b>Disclaimer</b>
+		<br/>
+		This is currently very much in early beta - it's probably very broken.
+		<br/>
+		This site is in no way associated with or approved by the ABS.
+	</div>
   </body>
 </html>
