@@ -24,5 +24,8 @@ The format of the XML closely mirrors the layout of the source spreadsheet. Here
     <![CDATA[http://www.ausstats.abs.gov.au....]]>
   </dataSource> 
 </workbook> 
-
 }}}
+Note that:
+ * element numbers are zero-based
+ * columns are contained by rows
+ * the dataSource element provides a link to the source .xls file on the ABS website
