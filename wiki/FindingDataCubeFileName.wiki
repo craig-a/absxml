@@ -7,5 +7,5 @@ In order to use absxml, you need to know which data cube you want to convert. Fo
   * NB, this service only works on time series spreadsheets, so ensure the links on the Downloads tab are under the heading *Time Series Spreadsheet*
  * Look though the list of time series spreadsheets and find the one you want
  * Hover your mouse over the .xls download link, or right-click\copy link location
- * In the URL, you will see _...log?openagent&<number>.xls&..._
- * <number>.xls is the file name that you are looking for
+ * In the URL, you will see _...log?openagent&number.xls&..._
+ * number.xls is the file name that you are looking for
