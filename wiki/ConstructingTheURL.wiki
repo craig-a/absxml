@@ -1,3 +1,11 @@
 #summary How to construct the URL to call the service
 
-http://absxml.appspot.com/absxml?pubFileName=640101&sheet=1 where pubFileName is the file name of the spreadsheet (minus extension) and sheet is the number of the sheet you want from the spreadsheet.
+Follow the following pattern:
+{{{
+ http://absxml.appspot.com/absxml?pubFileName=XXXXXX&sheet=Y 
+}}}
+where 
+ * pubFileName is the file name of the spreadsheet (minus extension) and 
+ * sheet is the number of the sheet you want from the spreadsheet (started at zero)
+
+Alternatively, the [http://absxml.appspot.com AppEngine page] has a simple form that will construct it for you.
