@@ -1,0 +1,137 @@
+/* Colours
+$bg = '#4b4b4b';
+$fg = '#000000';
+$a = '#c2002a';
+$border = '#eee';
+$header = $bg;
+$headerBorder = $bg;
+$headerA = $border;//$a;
+$content = '#d7d8d9';
+$postHeader = '#a7a9ac';
+$postHeaderText = $fg;
+$postBorder = '#eee';
+$footerA = $headerA;
+$menu = $header;
+$album = $header;
+*/
+body, html {
+	font-family:arial,helvetica,sans-serif;
+	font-size:12px;
+	color: #000000;
+	background-color:#ffffff;
+}
+
+a {
+	color:#4a699d;
+	text-decoration:none;
+	border:0px;
+}
+a:hover { color:#4a699d;}
+a:visited { color:#4a699d;}
+
+h1{
+	font-size:22px;
+	color:#4b4b4b;
+}
+
+h2{
+	font-size:18px;
+	color:#4b4b4b;
+}
+
+#header {
+	text-align: left;
+	border:1px solid #4a699d;
+	height:20px;
+	padding:10px;
+	background-color:#c3d9ff;
+	margin-top: 20px;
+	width:768px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+#title {
+	font-weight: bold;	
+	float: left;
+	font-size:1.1em;
+}
+
+#nav {
+	font-weight:bold;
+	text-align: right;
+	float: right;
+}
+
+#title>a, #nav>a {color:#4a699d; text-decoration:none;}
+#title>a, #nav>a:hover {color:#4a699d; }
+#title>a, #nav>a:visited {color:#4a699d;}
+
+#content {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:12px;
+	margin-bottom:10px;
+	width:768px;
+	padding: 10px;
+	border:1px solid #4a699d;
+	background-color:#e5ecf9;
+}
+
+/*
+.post{
+	width: auto;
+	border:1px solid ' . $postBorder . ';
+	margin-right:auto;
+	padding: 5px ;
+	margin-top: 5px;
+}
+
+.postHeader{
+	background-color:#a7a9ac;
+	color: ' . $postHeaderText . ';
+	margin-right:auto;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px; 
+	padding-right: 10px;
+	}
+.postTitle{
+	font-weight: bold;
+	float:left;
+	
+}
+
+.postDate{
+	font-style:italic;
+	text-align: right;
+}
+*/
+
+#content>p {padding-left: 10px;}
+
+#footer {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:12px;
+	margin-bottom:10px;
+	width:768px;
+	right: 5px;
+	bottom: 5px;
+	font-weight:bold;
+}
+
+#footer>#links{
+	float:left;
+}
+
+#footer>#validation{
+	float:right;
+	text-align:right;
+	font-weight:normal;
+}
+
+#footer>#validation>a, #footer>#links >a {	color:#eee;	text-decoration:none;}
+#footer>#validation>a, #footer>#links>a:hover { color:#eee;}
+#footer>#validation>a, #footer>#links>a:visited { color:#eee;}
