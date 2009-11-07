@@ -1,20 +1,34 @@
+/*Copyright (c) 2009 Ben Hughes
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+ 
 package com.benrhughes.absxml;
 import java.io.IOException;
 import java.net.URLDecoder;
 
 import javax.servlet.http.*;
 
-//TODO: cache clearing based on embargo time
-//TODO: current MEI values (different servlet??)
-//TODO: CSS for intro page
-//TODO: convert to RESTful service
-//TODO: persist cache?
-
 @SuppressWarnings("serial")
 public class AbsxmlServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		resp.setContentType("text/xml");
-		//resp.getWriter().println("Hello, world");
 		
 		String pubFileName = URLDecoder.decode(req.getParameter("pubFileName"), "UTF-8");
 		int sheet = Integer.parseInt(req.getParameter("sheet"));
@@ -22,11 +36,15 @@ public class AbsxmlServlet extends HttpServlet {
 		XMLConverter converter = XMLConverter.getInstance();
 		
 		String URI = constructURI(pubFileName);
-		String data;
+		String data ="";
 		
 		try{
 			data = converter.getData(URI, sheet);
 		}
+		catch (Exception e){
+			e.printStackTrace(resp.getWriter());
+		}
+		/*}
 		catch(Exception e){
 			String msg = "The decoded URL attempting to be accessed is: " + URI;
 			System.err.println(msg);
@@ -40,18 +58,9 @@ public class AbsxmlServlet extends HttpServlet {
 			sb.append(e.toString());
 			
 			data = sb.toString();
-		}
+		}*/
 		
 		resp.getWriter().write(data);
-//		StringBuilder sb = new StringBuilder();
-//		sb.append("<p>The target URI is <a href=\"");
-//		sb.append(URI);
-//		sb.append("\">");
-//		sb.append(URI);
-//		sb.append("</a></p>");
-//		
-//		resp.getWriter().write(sb.toString());
-
 	}
 	
 	private String constructURI(String pubFileName) {
