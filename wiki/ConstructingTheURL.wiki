@@ -1,5 +1,4 @@
 #summary How to construct the URL to call the service
-#labels Featured
 
 Follow the following pattern:
 {{{
