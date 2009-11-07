@@ -1,0 +1,13 @@
+#summary How to find the filename of the data cube
+
+= Introduction =
+
+Add your content here.
+
+
+= Details =
+From the [http://www.abs.gov.au/AUSSTATS/abs@.nsf/97adb482c0aba769ca2570460017d0e7/15d1d9943893067dca2572ec00157f40!OpenDocument#Bookmarking%20ABS%20Time%20Series%20Sprea ABS website help] (burried in the help, so reproduced here):
+
+To determine the filename of the ABS Time Series Spreadsheet required, hover your mouse pointer over the 'Free Download' link adjacent to the required spreadsheet (or alternately copy & paste the link/shortcut/address to Notepad or similar). The filename and its extension appear immediately following the "log?openagent&" section of the URL.
+
+eg, http://abs.gov.au/AUSSTATS/abs@archive.nsf/log?openagent&*640101*.xls&6401.0&Time Series Spreadsheet&11BD859813CC8817CA2573D8001754B4&0&Dec 2007&23.01.2008&Latest
