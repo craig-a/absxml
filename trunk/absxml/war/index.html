@@ -9,45 +9,43 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>absxml - Stats data in a usable format</title>
   </head>
 
   <body>
   	<div id="header">
 	  	<div id="title">
-	    	<h1>absxml</h1>
+	    	<a href="/">absxml</a>
 	    </div>
 	    <div id="nav">
-	    	<ul>
-	    		<li><a href="http://code.google.com/p/absxml/">Project Page</a></li>
-	    		<li><a href="http://www.benrhughes.com">Author</a></li>
-	    	</ul>
+    		<a href="http://code.google.com/p/absxml/">Project Page</a> &nbsp; | &nbsp;
+    		<a href="http://www.benrhughes.com">Author</a>
 	    </div>
     </div>
     <div id="content">
-		<p>absxml is a simple service that provides time series data from the Australian
+		absxml is a simple service that provides time series data from the Australian
 		Bureau of Statistics in XML format. For more info, see the <a href="http://code.google.com/p/absxml">
 		project page.</a>
-		</p>
-	</div>
-	<div id="form">
-		<p>
-			You can use this form to test the service:
-		</p>
-		<form name="input" action="absxml" method="get">
-			Enter the publication file name: <input type="text" name="pubFileName"/>
+		<div id="form">
+			<p>
+				You can use this form to test the service:
+			</p>
+			<form name="input" action="absxml" method="get">
+				Enter the publication file name: <input type="text" name="pubFileName"/>
+				<br/>
+				Enter the sheet from the data cube: <input type="text" name="sheet"/>
+				<br/>
+				<input type="submit" value="Submit"/> 
+			</form>
+		</div>
+		<div id="disclaimer">
+			<b>Disclaimer</b>
 			<br/>
-			Enter the sheet from the data cube: <input type="text" name="sheet"/>
+			This is currently very much in early beta - it's probably very broken.
 			<br/>
-			<input type="submit" value="Submit"/> 
-		</form>
-	</div>
-	<div id="disclaimer">
-		<b>Disclaimer</b>
-		<br/>
-		This is currently very much in early beta - it's probably very broken.
-		<br/>
-		This site is in no way associated with or approved by the ABS.
+			This site is in no way associated with or approved by the ABS.
+		</div>
 	</div>
   </body>
 </html>
