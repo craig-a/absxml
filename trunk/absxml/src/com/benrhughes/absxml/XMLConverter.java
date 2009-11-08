@@ -83,6 +83,7 @@ public class XMLConverter {
 			try{
 				URL url = new URL(uri);
 				URLConnection uc = url.openConnection();
+				uc.setConnectTimeout(10000);
 
 				Workbook w = Workbook.getWorkbook(uc.getInputStream());
 
