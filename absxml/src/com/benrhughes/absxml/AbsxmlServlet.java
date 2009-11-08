@@ -42,6 +42,7 @@ public class AbsxmlServlet extends HttpServlet {
 			data = converter.getData(URI, sheet);
 		}
 		catch (Exception e){
+			resp.setContentType("text/plain");
 			e.printStackTrace(resp.getWriter());
 		}
 		/*}
