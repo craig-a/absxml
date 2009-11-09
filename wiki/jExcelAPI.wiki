@@ -1,0 +1,3 @@
+#summary jExcelAPI is used to do the Excel conversion
+
+[http://jexcelapi.sourceforge.net/ jExcelAPI] is an open source Java library released under the LGPL which is remarkably handy for reading Excel in Java. The project most definitely would not be possible without it.
