@@ -33,34 +33,16 @@ public class AbsxmlServlet extends HttpServlet {
 		String pubFileName = URLDecoder.decode(req.getParameter("pubFileName"), "UTF-8");
 		int sheet = Integer.parseInt(req.getParameter("sheet"));
 
-		XMLConverter converter = XMLConverter.getInstance();
-		
 		String URI = constructURI(pubFileName);
 		String data ="";
 		
 		try{
-			data = converter.getData(URI, sheet);
+			data = SheetFactory.getSheet(URI, sheet);
 		}
 		catch (Exception e){
 			resp.setContentType("text/plain");
 			e.printStackTrace(resp.getWriter());
-		}
-		/*}
-		catch(Exception e){
-			String msg = "The decoded URL attempting to be accessed is: " + URI;
-			System.err.println(msg);
-			e.printStackTrace();	
-			
-			StringBuilder sb = new StringBuilder();
-			
-			sb.append("<p>" + msg + "</p>");
-			sb.append("\n");
-			sb.append("Servlet failed:<BR/>");
-			sb.append(e.toString());
-			
-			data = sb.toString();
-		}*/
-		
+		}		
 		resp.getWriter().write(data);
 	}
 	
