@@ -21,9 +21,6 @@ THE SOFTWARE.
 package com.benrhughes.absxml;
 
 import java.io.IOException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.Hashtable;
 
 import jxl.Cell;
 import jxl.CellType;
@@ -44,64 +41,8 @@ import jxl.Workbook;
  * across threads, allowing any thread to access the cache.
  */
 public class XMLConverter {
-
-	/*
-	 * Static members
-	 */
-	private static XMLConverter _xmlConverter;
-
-	/**
-	 * Gets the single instance of XMLConverter. 
-	 * Method is synchronized to ensure that multiple threads cannot create multiple instances
-	 */
-	public static synchronized XMLConverter getInstance(){
-		if (_xmlConverter == null){
-			_xmlConverter = new XMLConverter();	
-		}
-		return _xmlConverter;
-	}
-
-
-	/*
-	 * Instance members
-	 */
-
-	// _ht must be synchronized on write to be thread-safe
-	private Hashtable<String, StringBuilder> _ht = new Hashtable<String, StringBuilder>();
-
-	private XMLConverter(){
-
-	}
-
-	public String getData(String uri, int sheet) throws Exception{
-		StringBuilder data = new StringBuilder();
-
-		String key = uri + sheet;
-		
-		data = _ht.get(key);
-		if (data == null){
-			try{
-				URL url = new URL(uri);
-				URLConnection uc = url.openConnection();
-				uc.setConnectTimeout(10000);
-
-				Workbook w = Workbook.getWorkbook(uc.getInputStream());
-
-				data = generateXML(w, uri, sheet);
-
-				synchronized(_ht){
-					_ht.put(key, data);
-				}
-			}
-			catch (Exception e){
-				throw e;
-			}
-		}
-		
-		return data.toString();
-	}
 	
-	private StringBuilder generateXML(Workbook workbook, String uri, int sheet) throws IOException
+	public static StringBuilder convert(Workbook workbook, String uri, int sheet) throws IOException
 	{
 		StringBuilder sb = new StringBuilder();
 
