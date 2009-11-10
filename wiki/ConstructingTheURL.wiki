@@ -6,6 +6,6 @@ Follow the following pattern:
 }}}
 where 
  * pubFileName is the file name of the spreadsheet (minus extension) and 
- * sheet is the number of the sheet you want from the spreadsheet (started at zero)
+ * sheet is the number of the sheet you want from the spreadsheet (starting at zero)
 
 Alternatively, the [http://absxml.appspot.com AppEngine page] has a simple form that will construct it for you.
