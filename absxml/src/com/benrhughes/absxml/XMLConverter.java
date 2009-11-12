@@ -54,7 +54,8 @@ public class XMLConverter {
 
 		Sheet s = workbook.getSheet(sheet);
 
-		sb.append("  <sheet number=\"" + sheet + "\">");
+		// add 1 to the sheet number so that it aligns with the passed  parameter
+		sb.append("  <sheet number=\"" + sheet+1 + "\">");
 		sb.append("\n");
 		sb.append("    <name><![CDATA["+s.getName()+"]]></name>");
 		sb.append("\n");
