@@ -10,6 +10,8 @@ import jxl.read.biff.BiffException;
 public class SheetFactory {
 
 	public static String getSheet(String uri, int sheetNo) throws IOException, BiffException {
+		sheetNo--; // Workbook starts counting sheets at 0, but people usually start at 1
+		
 		String key = uri + sheetNo;
 		
 		StringBuilder data = Cache.get(key);
