@@ -1,0 +1,1 @@
+[jExcelAPI](http://jexcelapi.sourceforge.net/) is an open source Java library released under the LGPL which is remarkably handy for reading and writing Excel in Java. The project most definitely would not be possible without it.
